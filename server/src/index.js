@@ -13,17 +13,17 @@ const mocks = {
       return {
         name: "Grumpy Cat",
         photo:
-          "https://images.unsplash.com/photo-1516098677942-b7f9d8b8a8e3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+          "https://res.cloudinary.com/dety84pbu/image/upload/v1606816219/kitty-veyron-sm_mctf3c.jpg",
       };
     },
     thumbnail: () =>
-      "https://images.unsplash.com/photo-1516098677942-b7f9d8b8a8e3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      "https://res.cloudinary.com/dety84pbu/image/upload/v1598465568/nebula_cat_djkt9r.jpg",
     length: () => 120,
     modulesCount: () => 3,
   }),
 };
 
-const server = new ApolloServer({ typeDefs, mocks: true });
+const server = new ApolloServer({ typeDefs, mocks });
 
 server.listen().then(() => {
   console.log(`
