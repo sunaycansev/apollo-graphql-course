@@ -10,6 +10,18 @@ const resolvers = {
       return dataSources.trackAPI.getTrack(id);
     },
   },
+  Mutation: {
+    // increments the number of views for a track
+    incrementTrackViews: async (_, { id }, { dataSources }) => {
+      const track = await dataSources.trackAPI.incrementTrackViews(id);
+      return {
+        code: 200,
+        success: true,
+        message: "Track views incremented successfully",
+        track,
+      };
+    },
+  },
   Track: {
     author: ({ authorId }, _, { dataSources }) => {
       return dataSources.trackAPI.getAuthor(authorId);
